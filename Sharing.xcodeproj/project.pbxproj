@@ -413,7 +413,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apple.samples.cloudkit.sharing;
+				PRODUCT_BUNDLE_IDENTIFIER = io.gongzhang.samples.cloudkit.sharing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -437,7 +437,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apple.samples.cloudkit.sharing;
+				PRODUCT_BUNDLE_IDENTIFIER = io.gongzhang.samples.cloudkit.sharing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
