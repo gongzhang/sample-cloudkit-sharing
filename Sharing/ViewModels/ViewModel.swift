@@ -108,6 +108,7 @@ final class ViewModel: ObservableObject {
         guard let existingShare = contact.associatedRecord.share else {
             let share = CKShare(rootRecord: contact.associatedRecord)
             share[CKShare.SystemFieldKey.title] = "Contact: \(contact.name)"
+            share.publicPermission = .readWrite
             _ = try await database.modifyRecords(saving: [contact.associatedRecord, share], deleting: [])
             return (share, container)
         }
