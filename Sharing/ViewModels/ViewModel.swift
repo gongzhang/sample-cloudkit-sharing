@@ -7,6 +7,12 @@ import Foundation
 import CloudKit
 import OSLog
 
+extension CKRecord: @unchecked Sendable {
+}
+
+extension CKRecordZone: @unchecked Sendable {
+}
+
 @MainActor
 final class ViewModel: ObservableObject {
 
