@@ -180,18 +180,13 @@ final class ViewModel: ObservableObject {
 
     /// Creates the custom zone in use if needed.
     private func createZoneIfNeeded() async throws {
-        // Avoid the operation if this has already been done.
-        guard !UserDefaults.standard.bool(forKey: "isZoneCreated") else {
-            return
-        }
-
         do {
-            _ = try await database.modifyRecordZones(saving: [recordZone], deleting: [])
+            let _ = try await database.recordZone(for: recordZone.zoneID)
+        } catch let error as CKError where error.code == .zoneNotFound {
+            try await database.save(recordZone)
         } catch {
-            print("ERROR: Failed to create custom zone: \(error.localizedDescription)")
+            debugPrint("ERROR: Failed to fetch zone: \(error)")
             throw error
         }
-
-        UserDefaults.standard.setValue(true, forKey: "isZoneCreated")
     }
 }
